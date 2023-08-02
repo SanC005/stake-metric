@@ -5,7 +5,7 @@ function fetchData(url) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-api-key": `${process.env.API_KEY}`,
+      "x-api-key": process.env.NEXT_PUBLIC_API_KEY,
     },
     body: JSON.stringify({}),
   }).then((response) => {
@@ -24,40 +24,7 @@ function fetchData(url) {
   });
   });
 }
-//     fetch(url)
-//       .then((response) => {
-//         if (response.ok) {
-//           return response.json();
-//         } else {
-//           throw new Error("Network response was not ok.");
-//         }
-//       })
 
-//       .then((data) => {
-//         resolve(data);
-//       })
-
-//       .catch((error) => {
-//         reject(error);
-//       });
-//   });
-// }
-
-// async function getData(coin) {
-//   const res = await fetch(`https://${coin}.api.subscan.io/api/scan/metadata`, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//       "x-api-key": "71ddb4a6fb274c30b95b19df6af89ed9",
-//     },
-//     body: JSON.stringify({}),
-//   });
-//   // .then((res) => res.json()).catch((e) => console.log(e))
-//   if (!res.ok) {
-//     throw new Error("Failed to fetch data");
-//   }
-//   return res.json();
-// }
 export default function Details({index}) {
   const [val,setVal] = useState({});
   const x = {
