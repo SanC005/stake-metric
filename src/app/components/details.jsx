@@ -12,8 +12,8 @@ function fetchData(url) {
     if (response.ok) {
       return response.json();
     } else {
-    //   throw new Error("Network response was not ok.");
-        console.log("error")
+      throw new Error("Network response was not ok.");
+        // console.log("error")
     }
   })
   .then((data) => {
@@ -33,10 +33,10 @@ export default function Details({index}) {
     2:"kusama"
   }
   fetchData(`https://${x[index]}.api.subscan.io/api/scan/metadata`).then(function(result){
-      console.log("setting")
-          console.log(result)
+        //   console.log("setting")
+        //   console.log(result)
           setVal(result)
-          console.log("setted")
+        //   console.log("setted")
         })
   
   return (
